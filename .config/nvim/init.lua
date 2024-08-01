@@ -22,8 +22,9 @@ require("lazy").setup({
             local configs = require("nvim-treesitter.configs")
             configs.setup({
                 ensure_installed = { "c", "lua", "python", "vim", "java", "haskell", 
-                    "bash", "toml", "yaml", "json", "markdown"},
-                highlight = { enable = true },
+                    "bash", "toml", "yaml", "json", "markdown_inline"},
+                highlight = { enable = true,
+                additional_vim_regex_highlighting = true, },
                 indent = { enable = true },
             })
         end
@@ -46,10 +47,13 @@ require("lazy").setup({
             "MunifTanjim/nui.nvim",
         }
     },
+    {
+        "folke/tokyonight.nvim", lazy=false, priority=1000, opts={},
+    }
 })
 
 require('lualine').setup{
-    options = { theme = "ayu_dark" },
+    options = { theme = "ayu_dark"},
 }
 
 local skeld = require("skel-nvim.defaults")
@@ -65,7 +69,8 @@ require('skel-nvim').setup{
     }
 }
 
-vim.opt.termguicolors = true 
+vim.opt.termguicolors = true,
+vim.cmd[[colorscheme tokyonight]]
 
 vim.cmd([[
 set ts=4 sw=4 et nu rnu

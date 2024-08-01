@@ -18,6 +18,7 @@ myConfig = def
   , terminal      = "alacritty"
   , startupHook   = myStartupHook
   }
+  `additionalKeysP` []
 
 myStartupHook :: X ()
 myStartupHook = do
