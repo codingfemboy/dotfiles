@@ -190,7 +190,7 @@ screens = [
                 widget.Wlan(interface="wlp0s20f3",
                             format="{essid} {percent:2.0%}"),
                 widget.Sep(),
-                widget.Battery(format="{percent:2.0%}"),
+                widget.Battery(format="{percent:2.0%} {char}"),
                 widget.Sep(),
                 widget.Clock(format="%-I:%M %P, %a %-d %b"), widget.Sep(),
                 widget.QuickExit(),

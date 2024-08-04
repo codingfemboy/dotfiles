@@ -76,5 +76,15 @@ vim.cmd([[
 set ts=4 sw=4 et nu rnu
 let g:vimtex_view_method = 'zathura'
 let maplocalleader = ","
+let g:vimtex_compiler_latexmk = {
+    \ 'options' : [
+    \   '-pdf',
+    \   '-shell-escape',
+    \   '-verbose',
+    \   '-file-line-error',
+    \   '-synctex=1',
+    \   '-interaction=nonstopmode',
+    \ ],
+    \}
 hi NormalFloat guibg=DarkRed
 ]])
