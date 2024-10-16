@@ -39,6 +39,15 @@ require("lazy").setup({
         opts = {}
     },
     {
+      "iamcco/markdown-preview.nvim",
+      cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+      build = "cd app && yarn install",
+      init = function()
+        vim.g.mkdp_filetypes = { "markdown" }
+      end,
+      ft = { "markdown" },
+    },
+    {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v3.x",
         dependencies = {
@@ -75,6 +84,7 @@ vim.cmd[[colorscheme tokyonight]]
 vim.cmd([[
 set ts=4 sw=4 et nu rnu
 let g:vimtex_view_method = 'zathura'
+let g:mkdp_browser = 'qutebrowser'
 let maplocalleader = ","
 let g:vimtex_compiler_latexmk = {
     \ 'options' : [
@@ -88,3 +98,4 @@ let g:vimtex_compiler_latexmk = {
     \}
 hi NormalFloat guibg=DarkRed
 ]])
+
