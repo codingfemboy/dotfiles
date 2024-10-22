@@ -50,5 +50,5 @@ if [[ $wm == "QTILE" ]]; then
     source ~/.config/scripts/autostart.sh
     picom &
     source ~/.fehbg
-    exec qtile start
+    exec i3
 fi

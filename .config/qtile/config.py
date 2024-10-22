@@ -28,6 +28,7 @@ import os, subprocess
 
 from libqtile import bar, layout, qtile, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
+from libqtile.backend.x11.xkeysyms import keysyms
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
@@ -48,7 +49,7 @@ keys = [
     Key([mod], "Down", lazy.layout.down(), desc="Move focus down"),
     Key([mod], "Up", lazy.layout.up(), desc="Move focus up"),
 
-    Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
+    #Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
     Key([mod, "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"),
@@ -99,7 +100,7 @@ keys = [
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawn("rofi -show drun"), desc="Open rofi"),
 #    Key("Print", lazy.spawn("flameshot gui"), desc="Screenshot"),
-    Key([mod], "z", lazy.widget["keyboardlayout"].next_keyboard(), desc="Next keyboard layout."),
+    Key([mod], "space", lazy.widget["keyboardlayout"].next_keyboard(), desc="Next keyboard layout."),
 ]
 
 # Add key bindings to switch VTs in Wayland.
@@ -184,7 +185,7 @@ screens = [
                 # widget.StatusNotifier(),
                 widget.Systray(),
                 widget.Sep(),
-                widget.KeyboardLayout(configured_keyboards=['us intl', 'pl']),
+                widget.KeyboardLayout(configured_keyboards=['us intl', 'pl', 'ru phonetic_winkeys']),
                 widget.Sep(),
                 widget.PulseVolume(),
                 widget.Sep(),
