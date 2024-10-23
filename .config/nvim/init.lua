@@ -56,12 +56,10 @@ require("lazy").setup({
             "MunifTanjim/nui.nvim",
         }
     },
-    {
-        "folke/tokyonight.nvim", lazy=false, priority=1000, opts={},
-    },
-    {
-        "kaarmu/typst.vim", lazy=false, ft = 'typst',
-    }
+    { "folke/tokyonight.nvim", lazy=false, priority=1000, opts={}, },
+    { "kaarmu/typst.vim", lazy=false, ft = 'typst', },
+    { "tpope/vim-eunuch", }
+
 })
 
 require('lualine').setup{
@@ -82,9 +80,9 @@ require('skel-nvim').setup{
 }
 
 vim.opt.termguicolors = true,
-vim.cmd[[colorscheme tokyonight]]
 
 vim.cmd([[
+colorscheme tokyonight
 set ts=4 sw=4 et nu rnu
 let g:vimtex_view_method = 'zathura'
 let g:mkdp_browser = 'qutebrowser'
