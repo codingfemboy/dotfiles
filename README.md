@@ -14,6 +14,7 @@ These are my dotfiles. I manage them using [chezmoi](https://www.chezmoi.io/).
 - [tlp](https://linrunner.de/en/tlp/tlp.html) for laptop power management
 - [brightnessctl](https://github.com/Hummer12007/brightnessctl) - Screen brightness
 - [bemoji](https://github.com/marty-oehme/bemoji) & `pacman -S wtype` - Emoji picker
+- [imv](https://sr.ht/~exec64/imv/) for viewing images on Wayland
 - I use [nvim](https://neovim.io) btw. `ln -sf nvim /bin/vi` and `ln -sf nvim /bin/vim` can be useful.
 - I use [fish](https://fishshell.com/) as my default shell
 - I use arch btw. (Obviously)
