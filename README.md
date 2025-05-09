@@ -19,6 +19,7 @@ These are my dotfiles. I manage them using [chezmoi](https://www.chezmoi.io/).
 - I use [fish](https://fishshell.com/) as my default shell
 - I use arch btw. (Obviously)
 - `iwd` and `impala` for (minimalistic) network management
+- `hyprlock` and `hypridle` for idle management and screen locking
 - [zathura](https://pwmt.org/projects/zathura/) with [mupdf](https://pwmt.org/projects/zathura-pdf-mupdf/) - minimal PDF viewer
 - [mimi](https://github.com/BachoSeven/mimi) - Bloat-free replacement of xdg-open (for some reason the AUR has both `mimi` and `mimi-git` which link to the same repo, and I don't know what the difference is, but I have `mimi` installed.)
 - [doas](https://archlinux.org/packages/extra/x86_64/opendoas) - Bloat-free replacement of sudo
