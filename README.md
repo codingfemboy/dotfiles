@@ -1,6 +1,6 @@
 These are my dotfiles. I manage them using [chezmoi](https://www.chezmoi.io/).
 
-## Some useful programs that I use:
+## Some useful programs that I use
 - [niri](https://github.com/YaLTeR/niri) - A scrollable tiling Wayland compositor with dynamic workspaces (written in Rust!)
 - [foot](https://codeberg.org/dnkl/foot) - Minimalistic terminal emulator
 - [n³](https://github.com/jarun/nnn) - Minimalistic terminal file manager
@@ -27,3 +27,5 @@ These are my dotfiles. I manage them using [chezmoi](https://www.chezmoi.io/).
     - [eza](https://github.com/eza-community/eza) - ls
     - [atop](https://www.atoptool.nl/) - top/htop
 
+## Other links
+- [Wayland resources](https://github.com/rcalixte/awesome-wayland)

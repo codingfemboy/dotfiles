@@ -1,0 +1,114 @@
+// -*- mode: jsonc -*-
+{
+    // "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    "position": "top",
+    "height": 35,
+    // "height": 30, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "spacing": 4, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": [
+        "custom/power",
+        "idle_inhibitor",
+        "custom/clock"
+    ],
+    "modules-center": [
+        "wlr/taskbar",
+        "tray"
+    ],
+    "modules-right": [
+        "pulseaudio",
+        "backlight",
+        "network",
+        "cpu",
+        "memory",
+        "temperature",
+        "battery"
+    ],
+    "wlr/taskbar": {
+        "all-outputs": true,
+        "on-click": "activate"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "tray": {
+        "icon-size": 14,
+        "spacing": 10
+    },
+    "custom/clock": {
+        "exec": "date +\" %-I:%M:%S %p - %A, %d %B \"",
+        "interval": 1
+    },
+    "backlight": {
+        "format": "{percent}% {icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "cpu": {
+        "format": "{usage}% ", "tooltip": false
+    },
+    "memory": {
+        "format": "{}% ", "tooltip": false
+    },
+    "temperature": {
+        "critical-threshold": 80,
+        "thermal-zone": 8,
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""]
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}  ",
+        "format-full": "{capacity}% {icon}  ",
+        "format-charging": "{capacity}%   ",
+        "format-plugged": "{capacity}%   ",
+        "on-click": "tlpui",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "",
+        "format-ethernet": "",
+        "tooltip-format": "{essid} ({signalStrength}%) | {ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "⚠"
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon}  {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/power": {
+        "format" : "    ",
+		"tooltip": false,
+		"menu": "on-click",
+		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+		"menu-actions": {
+			"suspend": "systemctl suspend",
+			"shutdown": "systemctl poweroff -i",
+			"reboot": "systemctl reboot -i"
+		}
+    }
+}
