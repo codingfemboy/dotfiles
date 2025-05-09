@@ -1,0 +1,15 @@
+\documentclass{article}
+\usepackage{amsmath, minted, fancyhdr, graphicx} % Math, code snippets, headers, images
+\usepackage[a4paper, total={6in,8in}]{geometry} % Smaller margins
+\renewcommand\thesubsection{\thesection(\alph{subsection})} % Subsections in style 1(a)
+\setlength{\parindent}{0pt} % No indent for new paragraphs
+
+\begin{document}
+
+\definecolor{backcolour}{rgb}{0.97,0.97,0.97} \pagecolor{backcolour} % Background colour
+\pagestyle{fancy} % Headers
+
+\fancyhead[L]{@FILENAME@}
+\fancyhead[R]{Leo Baker (ibak560)}
+
+\end{document}
